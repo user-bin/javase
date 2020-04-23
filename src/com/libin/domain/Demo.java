@@ -3,33 +3,24 @@ package com.libin.domain;
 import java.util.Arrays;
 
 public class Demo {
-
     public static void main(String[] args) {
-
-        int sum = 0;//方法一
-        for (int i = 1; i <= 9; i++) {
-            sum += i * 10 + i;
+        int[][] arr = new int[5][];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = new int[i + 1];
         }
-        System.out.println(sum);
-
-        int sum1 = 0;//方法二
-        for (int i = 10; i < 100; i++) {
-            if (i / 10 == i % 10) {
-                sum1 += i;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = i + 1;
             }
         }
-        System.out.println(sum1);
-        int sum2 = 0;//方法三
-        for (int i = 10;i<=99;i++){
-            if (i%11==0){
-                sum2+=i;
-            }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(Arrays.toString(arr[i]));
         }
-        System.out.println(sum2);
-
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
-
-
-
-
